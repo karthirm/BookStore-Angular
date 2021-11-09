@@ -14,7 +14,6 @@ export class HttpClientService {
   /*private getUsersUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/users/get';
   private addUsersUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/users/add';
   private deleteUserUrl =   'https:/bookstore-spring-boot-app.herokuapp.com/users/delete';
-
   private getBooksUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/books/get';
   private addBooksUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/books/add';
   private deleteBooksUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/books/delete';
@@ -25,19 +24,19 @@ export class HttpClientService {
   getUsers()
   {
     console.log('Getting all users');
-    return this.httpClient.get<User[]>(this.baseUrl + 'users/get/');  
+    return this.httpClient.get<User[]>(this.baseUrl + 'user/get');  
   }
 
   addUser(newUser: User) {
-    return this.httpClient.post<User[]>(this.baseUrl + 'users/add/', newUser);     
+    return this.httpClient.post<User[]>(this.baseUrl + 'user/add/', newUser);     
   }
 
   deleteUser(id) {
-    return this.httpClient.delete<User>(this.baseUrl + 'users/delete/' + id);
+    return this.httpClient.delete<User>(this.baseUrl + 'user/delete/' + id);
   }
 
   getBooks(){
-    return this.httpClient.get<Book>(this.baseUrl + 'books/get/');
+    return this.httpClient.get<Book>(this.baseUrl + 'books/get');
   }
 
   addBook(newBook: Book) {
@@ -45,11 +44,11 @@ export class HttpClientService {
   }
 
   deleteBook(id) {
-    return this.httpClient.delete<Book>(this.baseUrl + 'books/delete' + id);
+    return this.httpClient.delete<Book>(this.baseUrl + 'books/delete/' + id);
   }
 
   updateBook(updatedBook: Book) {
-    return this.httpClient.put<Book>(this.baseUrl + '/books/update', updatedBook);
+    return this.httpClient.put<Book>(this.baseUrl + '/books/update/', updatedBook);
   }
 
 }
