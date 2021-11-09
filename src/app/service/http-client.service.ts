@@ -24,11 +24,13 @@ export class HttpClientService {
   getUsers()
   {
     console.log('Getting all users');
-    return this.httpClient.get<User[]>(this.baseUrl + 'users/get');  
+   // return this.httpClient.get<User[]>(this.baseUrl + 'users/get');  
+    return this.httpClient.get<User[]>('https://bookstore-angular-app.herokuapp.com/users/get');  
   }
 
   addUser(newUser: User) {
-    return this.httpClient.post<User>(this.baseUrl + 'users/add', newUser);     
+   // return this.httpClient.post<User>(this.baseUrl + 'users/add', newUser);  
+     return this.httpClient.post<User>('https://bookstore-angular-app.herokuapp.com/users/add', newUser);   
   }
 
   deleteUser(id) {
