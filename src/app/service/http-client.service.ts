@@ -24,11 +24,11 @@ export class HttpClientService {
   getUsers()
   {
     console.log('Getting all users');
-    return this.httpClient.get<User[]>(this.baseUrl + 'users/get/');  
+    return this.httpClient.get<User[]>(this.baseUrl + 'users/get');  
   }
 
   addUser(newUser: User) {
-    return this.httpClient.post<User[]>(this.baseUrl + 'users/add/', newUser);     
+    return this.httpClient.post<User>(this.baseUrl + 'users/add', newUser);     
   }
 
   deleteUser(id) {
@@ -36,11 +36,15 @@ export class HttpClientService {
   }
 
   getBooks(){
-    return this.httpClient.get<Book>(this.baseUrl + 'books/get/');
+    return this.httpClient.get<Book[]>(this.baseUrl + 'books/get');
+  }
+
+  addUploadData(selectedFile) {
+    return this.httpClient.post(this.baseUrl + 'books/upload', selectedFile);
   }
 
   addBook(newBook: Book) {
-    return this.httpClient.post<Book>(this.baseUrl + 'books/add/', newBook);
+    return this.httpClient.post<Book>(this.baseUrl + 'books/add', newBook);
   }
 
   deleteBook(id) {
@@ -48,7 +52,7 @@ export class HttpClientService {
   }
 
   updateBook(updatedBook: Book) {
-    return this.httpClient.put<Book>(this.baseUrl + '/books/update/', updatedBook);
+    return this.httpClient.put<Book>(this.baseUrl + '/books/update', updatedBook);
   }
 
 }
