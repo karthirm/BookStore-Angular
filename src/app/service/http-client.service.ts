@@ -24,19 +24,19 @@ export class HttpClientService {
   getUsers()
   {
     console.log('Getting all users');
-    return this.httpClient.get<User[]>(this.baseUrl + 'user/get');  
+    return this.httpClient.get<User[]>(this.baseUrl + 'users/get/');  
   }
 
   addUser(newUser: User) {
-    return this.httpClient.post<User[]>(this.baseUrl + 'user/add/', newUser);     
+    return this.httpClient.post<User[]>(this.baseUrl + 'users/add/', newUser);     
   }
 
   deleteUser(id) {
-    return this.httpClient.delete<User>(this.baseUrl + 'user/delete/' + id);
+    return this.httpClient.delete<User>(this.baseUrl + 'users/delete/' + id);
   }
 
   getBooks(){
-    return this.httpClient.get<Book>(this.baseUrl + 'books/get');
+    return this.httpClient.get<Book>(this.baseUrl + 'books/get/');
   }
 
   addBook(newBook: Book) {
