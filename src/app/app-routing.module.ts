@@ -5,7 +5,7 @@ import { BooksComponent } from './admin/books/books.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
 
 const routes: Routes = [
-  { path: 'admin/users', component: UsersComponent },
+  { path: 'admin/user', component: UsersComponent },
   { path: 'admin/books', component: BooksComponent },
   { path: 'shop', component: ShopbookComponent }
 ];
