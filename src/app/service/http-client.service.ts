@@ -8,14 +8,14 @@ import { Book } from '../model/Book';
 })
 export class HttpClientService {
 
-  private getUsersUrl = 'https://bookstore-spring-angular.herokuapp.com/users/get';
-  private addUsersUrl = 'https://bookstore-spring-angular.herokuapp.com/users/add';
-  private deleteUserUrl =   'https://bookstore-spring-angular.herokuapp.com/users/delete';
+  private getUsersUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/users/get';
+  private addUsersUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/users/add';
+  private deleteUserUrl =   'https:/bookstore-spring-boot-app.herokuapp.com/users/delete';
 
-  private getBooksUrl = 'https://bookstore-spring-angular.herokuapp.com/books/get';
-  private addBooksUrl = 'https://bookstore-spring-angular.herokuapp.com/books/add';
-  private deleteBooksUrl = 'https://bookstore-spring-angular.herokuapp.com/books/delete';
-  private updateBooksUrl = 'https://bookstore-spring-angular.herokuapp.com/books/update';
+  private getBooksUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/books/get';
+  private addBooksUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/books/add';
+  private deleteBooksUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/books/delete';
+  private updateBooksUrl = 'https:/bookstore-spring-boot-app.herokuapp.com/books/update';
 
   constructor(private httpClient:HttpClient) { }
 
