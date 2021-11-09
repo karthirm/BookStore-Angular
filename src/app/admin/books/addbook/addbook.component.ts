@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/model/Book';
 import { HttpClientService } from 'src/app/service/http-client.service';
+import {environment} from "src/environments/environment";
 
 @Component({
   selector: 'app-addbook',
@@ -18,7 +19,8 @@ export class AddbookComponent implements OnInit {
 
   public selectedFile;
   imgURL: any;
-  private uploadBooksUrl = 'https://bookstore-spring-angular.herokuapp.com/books/upload';
+  private baseUrl = environment.API_URL;
+  //private uploadBooksUrl = 'https://bookstore-spring-angular.herokuapp.com/books/upload';
 
   constructor(private httpClientService: HttpClientService,
     private activedRoute: ActivatedRoute,
@@ -47,7 +49,7 @@ export class AddbookComponent implements OnInit {
       uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
       this.selectedFile.imageName = this.selectedFile.name;
 
-      this.httpClient.post(this.uploadBooksUrl, uploadData, { observe: 'response' })
+      this.httpClient.post(this.baseUrl + 'books/upload/', uploadData, { observe: 'response' })
         .subscribe((response) => {
           if (response.status === 200) {
             this.httpClientService.addBook(this.book).subscribe(
